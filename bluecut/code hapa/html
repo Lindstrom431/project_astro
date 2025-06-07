@@ -1,0 +1,359 @@
+function App() {
+  return (
+    <main className="bg-[#F6F8F7] text-[#003B3B] font-sans">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Header */}
+        <section className="text-center py-14">
+          <p className="uppercase text-sm tracking-widest text-gray-500 mb-2">Services</p>
+          <h1 className="text-4xl font-bold mb-4">Your Path to Well-being</h1>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Discover expert guidance for a healthier mind and balanced life.
+          </p>
+        </section>
+
+        {/* Services */}
+        <section className="grid gap-6 lg:grid-cols-3 pb-14">
+          <div className="bg-[#FFE7D3] p-6 rounded-xl shadow-sm">
+            <h2 className="font-semibold text-lg mb-2">Mindfulness & Meditation</h2>
+            <p className="text-sm mb-4">
+              Guided meditation sessions and stress management techniques.
+            </p>
+            <button className="bg-white text-[#003B3B] px-4 py-2 rounded-full border border-[#003B3B] hover:bg-gray-100 transition">
+              Learn More
+            </button>
+          </div>
+
+          <div className="bg-white p-6 rounded-xl shadow-sm">
+            <h2 className="font-semibold text-lg mb-2">One-on-One Therapy</h2>
+            <p className="text-sm mb-4">
+              Virtual and in-person therapy sessions with licensed professionals.
+            </p>
+            <button className="bg-white text-[#003B3B] px-4 py-2 rounded-full border border-[#003B3B] hover:bg-gray-100 transition">
+              Learn More
+            </button>
+          </div>
+
+          <div className="bg-white p-6 rounded-xl shadow-sm flex flex-col justify-between">
+            <div>
+              <h2 className="font-semibold text-lg mb-2">Wellness Coaching</h2>
+              <p className="text-sm mb-4">
+                Personalized guidance to help you build healthier habits, manage stress, and find balance.
+              </p>
+            </div>
+            <div className="flex items-center justify-between mt-auto">
+              <button className="bg-[#003B3B] text-white px-4 py-2 rounded-full hover:bg-[#002c2c] transition">
+                Learn More
+              </button>
+              <img
+                src="/path-to-your-illustration.svg"
+                alt="Wellness Illustration"
+                className="w-16 h-16 hidden lg:block"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials */}
+        <section className="pb-14">
+          <h2 className="text-center text-xl font-bold mb-6">What Our Clients Are Saying</h2>
+          <div className="flex flex-col lg:flex-row gap-6">
+            <div className="bg-[#FFE7D3] p-4 rounded-xl shadow-sm w-full">
+              <p className="text-sm italic">
+                “Solus made it so easy to find the right therapist for me…”
+              </p>
+              <p className="text-xs mt-2 font-medium">— Anna R., 32</p>
+            </div>
+            <div className="bg-[#003B3B] text-white p-4 rounded-xl shadow-sm w-full">
+              <p className="text-sm italic">
+                “I was struggling with stress and anxiety…”
+              </p>
+              <p className="text-xs mt-2 font-medium">— Mark S., 41</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Resources */}
+        <section className="pb-14">
+          <div className="text-center mb-8">
+            <p className="uppercase text-sm text-gray-500">Explore & Learn</p>
+            <h2 className="text-2xl font-bold">Resources for Your Well-being</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto mt-2">
+              Explore expert insights, self-care guides, and tools to support your mental health.
+            </p>
+          </div>
+          <div className="grid gap-6 lg:grid-cols-3">
+            {[
+              { title: "Articles & Guides", text: "Practical tips for mental health and well-being.", color: "bg-[#FFF5E1]" },
+              { title: "Meditation & Relaxation", text: "Audio sessions and exercises for daily calm.", color: "bg-[#E1F5F2]" },
+              { title: "Webinars & Workshops", text: "Live expert sessions and recorded workshops.", color: "bg-[#FDE1ED]" },
+            ].map(({ title, text, color }, i) => (
+              <div key={i} className={`${color} p-6 rounded-xl shadow-sm`}>
+                <h3 className="font-semibold text-lg mb-2">{title}</h3>
+                <p className="text-sm mb-4">{text}</p>
+                <button className="bg-white px-4 py-2 rounded-full text-sm hover:bg-gray-100 transition">
+                  Explore
+                </button>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+    </main>
+  );
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+tailwind.config
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+index.css
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function App() {
+  return (
+    <div className="font-sans text-gray-800">
+      {/* Navbar */}
+      <nav className="flex items-center justify-between p-6 bg-white shadow-md px-5">
+        <ul className="hidden md:flex space-x-6 text-gray-600 font-bold flex-1 justify-start">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+        </ul>
+        <div className="text-2xl font-bold text-green-800 text-center flex-1">Mechatron</div>
+        <ul className="hidden md:flex space-x-6 text-gray-600 font-bold flex-1 justify-end">
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button className="md:hidden">
+          {/* Add hamburger icon here if needed */}
+        </button>
+      </nav>
+
+      {/* Hero Section */}
+      <section id="home" className="text-center py-20 bg-orange-50 px-6">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-4xl font-bold mb-4 text-gray-800">Advanced CNC & Laser Solutions</h1>
+          <p className="text-lg mb-6 text-gray-600">Empowering precision engineering with expert CNC machining, laser cutting, and 3D printing services.</p>
+          <button className="bg-green-800 text-white px-6 py-3 rounded-lg">Get Started</button>
+        </div>
+      </section>
+
+      {/* Section: Services Overview */}
+      <section id="services" className="py-16 bg-white px-6">
+        <div className="max-w-6xl mx-auto grid gap-12">
+          <div className="text-center md:col-span-2">
+            <h3 className="text-xl font-bold mb-2">Laser Cutting</h3>
+            <p className="text-gray-600">Precision laser cutting services for metals, plastics, and more.</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-green-100 p-6 rounded-xl">
+              <h3 className="text-xl font-bold mb-2">3D Printing</h3>
+              <p className="text-gray-600">Rapid prototyping and additive manufacturing with high-quality materials.</p>
+            </div>
+            <div className="bg-blue-100 p-6 rounded-xl">
+              <h3 className="text-xl font-bold mb-2">CNC Milling & Turning</h3>
+              <p className="text-gray-600">High-speed milling and turning with industry-standard tolerances.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section: Custom CNC */}
+      <section className="py-16 bg-white px-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-3xl font-bold mb-4">Custom CNC Machining for Industrial Needs</h2>
+            <p className="text-gray-600 mb-6">From prototyping to production, we deliver high-precision machining services tailored for your specifications.</p>
+            <button className="bg-green-700 text-white px-5 py-2 rounded-lg">Request a Quote</button>
+          </div>
+          <div>
+            <img src="https://source.unsplash.com/featured/?cnc,machine" alt="Custom CNC" className="w-full h-64 object-cover rounded-lg" />
+          </div>
+        </div>
+      </section>
+
+      {/* Section: Projects */}
+      <section id="projects" className="py-16 bg-white px-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 items-start">
+          <div className="md:col-span-1">
+            <h2 className="text-3xl font-bold mb-4">What Our Clients Are Saying</h2>
+            <p className="text-gray-600">Our partners share how Mechatron has helped transform their manufacturing process through precision and reliability.</p>
+          </div>
+          <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-gray-100 p-6 rounded-lg shadow">
+              <p className="text-gray-600 mb-2">“Mechatron provided CNC parts with outstanding precision. Truly impressive!”</p>
+              <p className="font-bold">— Alex P., Manufacturing Lead</p>
+            </div>
+            <div className="bg-gray-100 p-6 rounded-lg shadow">
+              <p className="text-gray-600 mb-2">“Their 3D printing service helped us iterate designs quickly. Highly recommend.”</p>
+              <p className="font-bold">— Lisa W., Product Designer</p>
+            </div>
+            <div className="bg-gray-100 p-6 rounded-lg shadow">
+              <p className="text-gray-600 mb-2">“Exceptional attention to detail. Mechatron has become our go-to for precision manufacturing.”</p>
+              <p className="font-bold">— Raj M., Operations Manager</p>
+            </div>
+            <div className="bg-gray-100 p-6 rounded-lg shadow">
+              <p className="text-gray-600 mb-2">“Fast turnaround, great customer service, and top-tier quality.”</p>
+              <p className="font-bold">— Nina S., Product Engineer</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section: Resources */}
+      <section className="py-16 bg-gray-50 px-6">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold">Engineering Resources</h2>
+          <p className="text-gray-600">Stay updated with the latest trends in manufacturing and fabrication.</p>
+        </div>
+        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+          <div className="bg-white p-6 rounded-xl shadow">
+            <h4 className="text-lg font-bold mb-2">CNC Machining Guides</h4>
+            <p className="text-gray-600">Deep dives into tooling, feed rates, and best practices.</p>
+          </div>
+          <div className="bg-white p-6 rounded-xl shadow">
+            <h4 className="text-lg font-bold mb-2">3D Printing Tips</h4>
+            <p className="text-gray-600">Material selection, design constraints, and troubleshooting.</p>
+          </div>
+          <div className="bg-white p-6 rounded-xl shadow">
+            <h4 className="text-lg font-bold mb-2">Laser Tech News</h4>
+            <p className="text-gray-600">Innovations in industrial laser cutting and engraving.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section: Contact CTA */}
+      <section id="contact" className="py-20 text-center bg-white px-6">
+        <h2 className="text-3xl font-bold mb-4">Let’s Build Something Amazing</h2>
+        <p className="text-gray-600 mb-6">Connect with our team to explore what we can fabricate for you.</p>
+        <button className="bg-green-800 text-white px-6 py-3 rounded-lg">Start Your Project</button>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-gray-50 px-6" id="faq">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <div className="bg-white p-4 rounded shadow">
+              <h4 className="font-bold">What materials can you work with?</h4>
+              <p className="text-gray-600">We support aluminum, steel, plastics, and various composites.</p>
+            </div>
+            <div className="bg-white p-4 rounded shadow">
+              <h4 className="font-bold">What's your typical turnaround time?</h4>
+              <p className="text-gray-600">Most projects complete within 5–7 business days, depending on complexity.</p>
+            </div>
+            <div className="bg-white p-4 rounded shadow">
+              <h4 className="font-bold">Can I submit my own design files?</h4>
+              <p className="text-gray-600">Absolutely! We accept standard CAD formats including STEP, IGES, and STL.</p>
+            </div>
+            <div className="bg-white p-4 rounded shadow">
+              <h4 className="font-bold">Do you offer design assistance?</h4>
+              <p className="text-gray-600">Yes, our engineering team can help refine your concept into a manufacturable design.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-12 px-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+          <div>
+            <h3 className="text-xl font-bold mb-2">Mechatron</h3>
+            <p className="text-sm">High-precision CNC, laser cutting, and 3D printing services tailored for modern engineering.</p>
+          </div>
+          <div>
+            <h4 className="font-bold mb-2">Contact</h4>
+            <p>Email: support@mechatron.com</p>
+            <p>Phone: +1 234 567 8901</p>
+          </div>
+          <div>
+            <h4 className="font-bold mb-2">Quick Links</h4>
+            <ul className="space-y-1">
+              <li><a href="#home" className="hover:underline">Home</a></li>
+              <li><a href="#services" className="hover:underline">Services</a></li>
+              <li><a href="#projects" className="hover:underline">Projects</a></li>
+              <li><a href="#faq" className="hover:underline">FAQs</a></li>
+              <li><a href="#contact" className="hover:underline">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div className="text-center mt-8 text-sm">&copy; 2025 Mechatron. All rights reserved.</div>
+      </footer>
+    </div>
+  );
+}
+
+export default App;
